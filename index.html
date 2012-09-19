@@ -1,0 +1,94 @@
+<html>
+<head>
+	<title>Multiline Background Highligther</title>
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.8.1.min.js"></script>
+	<script type="text/javascript" src="js/jquery.multilineHighlighter.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('.highlight').multilineHighlighter();
+		});
+	</script>
+	<style type="text/css">
+		body{
+			font-family: Arial;
+		}
+
+		h2{
+			padding: 5px 20px;
+			background: orange;
+			width: 195px;
+		}
+
+		h3{
+			padding: 5px 20px;
+			background: green;
+		}
+
+		.wrapper{
+			width: 200px;
+			margin-top: 20px;
+		}
+
+		.usage{
+			position: absolute;
+			top: 40px;
+			right: 20px;
+			width: 630px;
+		}
+
+		pre{
+			background: #ccc;
+			padding: 10px;
+		}
+
+
+	</style>
+</head>
+<body>
+
+<h1>Multiline Background Highligther</h1>
+
+<h2 class="highlight">Example 1 line</h2>
+
+<h2>This is an example with 4 lines without multiline highlight.</h2>
+
+<h2 class="highlight">This is an example with 4 lines with multiline highlight call.</h2>
+
+<div class="wrapper">
+	<h3 class="highlight">This is an example where the with is given to the wrapper rather than the element</h3>
+</div>
+
+<div class="usage">
+	<h2>Usage:</h2>
+	<p>Create an element and style it as you wish</p>
+	<pre>
+
+h2.highlight{
+	padding: 5px 20px;
+	background: orange;
+	width: 200px;
+}
+
+...
+
+&lt;h2 class="highlight"&gt;Lorem ipsum dolor sit...&lt;/h2&gt;
+	</pre>
+
+	<p>Include jQuery and Multiline Highlither plugin</p>
+	<pre>
+
+&lt;script src="http://code.jquery.com/jquery-1.8.1.min.js"&gt;&lt;/script&gt;
+&lt;script src="js/jquery.multilineHighlighter.js"&gt;&lt;/script&gt;
+	</pre>
+	<p>Initialize Multiline Highlither</p>
+	<pre>
+
+$(document).ready(function(){
+	$('.highlight').multilineHighlighter();
+});
+	</pre>
+
+</div>
+
+</body>
+</html>
