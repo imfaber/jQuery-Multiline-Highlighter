@@ -1,3 +1,4 @@
+
 <html>
 <head>
 	<title>Multiline Background Highligther</title>
@@ -11,6 +12,7 @@
 	<style type="text/css">
 		body{
 			font-family: Arial;
+			color: #000;
 		}
 
 		h2{
@@ -22,6 +24,7 @@
 		h3{
 			padding: 5px 20px;
 			background: green;
+			margin-bottom: 20px;
 		}
 
 		.wrapper{
@@ -41,6 +44,12 @@
 			padding: 10px;
 		}
 
+		a.highlight{
+			padding: 5px 20px;
+			background: green;
+			width: 195px;
+		}
+
 
 	</style>
 </head>
@@ -52,11 +61,15 @@
 
 <h2>This is an example with 4 lines without multiline highlight.</h2>
 
-<h2 class="highlight">This is an example with 4 lines with multiline highlight call.</h2>
+<h2 class="highlight"><a title="AAA" href="http://www.google.it">This is an example with 4 lines with multiline highlight call</a>.</h2>
 
 <div class="wrapper">
-	<h3 class="highlight">This is an example where the with is given to the wrapper rather than the element</h3>
+	<h3 class="highlight" title="aaa">This is an example where the with is given to the wrapper rather than the element</h3>
+
+	<a class="highlight" title="AAA" href="http://www.google.it">This is an example where the with is given to the wrapper rather than the element</a>
 </div>
+
+
 
 <div class="usage">
 	<h2>Usage:</h2>
