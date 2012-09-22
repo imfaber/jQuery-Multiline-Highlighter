@@ -12,7 +12,6 @@
 	<style type="text/css">
 		body{
 			font-family: Arial;
-			color: #000;
 		}
 
 		h2{
@@ -27,6 +26,18 @@
 			margin-bottom: 20px;
 		}
 
+		a{
+			color: #fff;
+		}
+
+		a.highlight{
+			padding: 5px 20px;
+			background: green;
+			width: 195px;
+			display: inline;
+			color: #fff;
+		}
+
 		.wrapper{
 			width: 200px;
 			margin-top: 20px;
@@ -34,7 +45,7 @@
 
 		.usage{
 			position: absolute;
-			top: 40px;
+			top: 60px;
 			right: 20px;
 			width: 630px;
 		}
@@ -44,35 +55,26 @@
 			padding: 10px;
 		}
 
-		a.highlight{
-			padding: 5px 20px;
-			background: green;
-			width: 195px;
-		}
-
-
 	</style>
 </head>
 <body>
 
 <h1>Multiline Background Highligther</h1>
 
-<h2 class="highlight">Example 1 line</h2>
+<h2 class="highlight">Just 1 line</h2>
 
-<h2>This is an example with 4 lines without multiline highlight.</h2>
-
-<h2 class="highlight"><a title="AAA" href="http://www.google.it">This is an example with 4 lines with multiline highlight call</a>.</h2>
+<h2 class="highlight"><a title="Example title" href="http://www.google.it">This is an example with 5 lines with multiline highlight call</a>.</h2>
 
 <div class="wrapper">
-	<h3 class="highlight" title="aaa">This is an example where the with is given to the wrapper rather than the element</h3>
+	<h3 class="highlight" title="Example title">This is an example where the width is given to the wrapper rather than the element and where the element has the attribute title</h3>
 
-	<a class="highlight" title="AAA" href="http://www.google.it">This is an example where the with is given to the wrapper rather than the element</a>
+	<a class="highlight" title="Example title" href="http://www.google.it">This is an example where the element is an anchor</a>
 </div>
 
 
 
 <div class="usage">
-	<h2>Usage:</h2>
+	<h2 class="highlight">Usage:</h2>
 	<p>Create an element and style it as you wish</p>
 	<pre>
 

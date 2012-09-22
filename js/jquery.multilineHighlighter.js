@@ -30,7 +30,7 @@
             }
 
             //first line properties
-            var defaultTextHeight = isNaN(parseInt($elem.css("line-height"))) ? Math.floor(parseInt($elem.css("font-size")) + parseInt($elem.css("padding-top")) + parseInt($elem.css("padding-bottom"))) : parseInt($elem.css("line-height"));
+            var defaultTextHeight = Math.floor(parseInt($elem.css("font-size")) + parseInt($elem.css("padding-top")) + parseInt($elem.css("padding-bottom"))) + 2;
             var defaultTextWidth = parseInt($elem.css("padding-right")) + parseInt($elem.css("padding-right")) + $elem.width();
             var defaultTextPadding = $elem.css('padding-top') + ' ' + $elem.css('padding-right') + ' ' + $elem.css('padding-bottom') + ' ' + $elem.css('padding-left');
 
@@ -39,9 +39,10 @@
             if ($elem.find('a').size() > 0) {
                 $link = $elem.find('a');
                 var link = {
-                    'href': $link.attr('href'),
-                    'target': $link.attr('target'),
-                    'title': $link.find('a').attr('title')
+                    'href': (typeof($link.attr('href'))!=='undefined') ? $link.attr('href') : 'javascript:void(0)',
+                    'target': (typeof($link.attr('target'))!=='undefined') ? $link.attr('target') : '_self',
+                    'title': (typeof($link.attr('title'))!=='undefined') ? $link.attr('title') : '',
+                    'class': (typeof($link.attr('class'))!=='undefined') ? $link.attr('class') : ''
                 };
                 containsLink = true;
             }
@@ -74,7 +75,7 @@
                 $(elemHighlighted).text('');
 
                 if (containsLink) {
-                    $(elemHighlighted).append('<a href="' + link.href + '" target="' + link.target + '" title="' + link.title + '"></a>');
+                    $(elemHighlighted).append('<a class="' + link.class + '" href="' + link.href + '" target="' + link.target + '" title="' + link.title + '"></a>');
                     $(elemHighlighted).find('a').css({
                         'background-color': 'transparent',
                         'padding': '0'
@@ -96,7 +97,6 @@
                 $(elemHighlighted).find('.new-line').css({
                     'background-color': $elem.css('background-color'),
                     'padding': defaultTextPadding,
-                    'line-height': $elem.css('line-height'),
                     'position': 'relative',
                     'display': 'inline-block'
                 });
@@ -108,6 +108,9 @@
 
                 //remove original
                 $elem.remove();
+            }
+            else{
+                $elem.css({'display': 'inline'});
             }
 
         });
